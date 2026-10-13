@@ -1,0 +1,208 @@
+/* Základné farby a písmo celej stránky. */
+:root {
+  color-scheme: light;
+  --ink: #19333b;
+  --muted: #52666b;
+  --accent: #00796f;
+  --accent-bright: #d4f0e6;
+  --line: #c5d4d1;
+  --paper: #fbfaf5;
+}
+
+/* Základné rozmery pomáhajú predísť nečakanému pretečeniu obsahu. */
+* {
+  box-sizing: border-box;
+}
+
+/* Vzhľad dokumentu a jeho písma. */
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Hlavička vytvára výrazný úvod a jemný farebný pás stránky. */
+.site-header {
+  padding: 3rem max(1.25rem, calc((100% - 62rem) / 2)) 2rem;
+  background: var(--accent-bright);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Malý štítok nad hlavným nadpisom. */
+.eyebrow,
+.section-number {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Nadpisy zdieľajú farbu a primerané riadkovanie. */
+h1,
+h2 {
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+/* Hlavný nadpis v úvode stránky. */
+h1 {
+  max-width: 15ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+/* Navigácia je v jednom riadku a pri úzkej obrazovke sa zalomí. */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Odkazy používajú jasný kontrast a viditeľný stav pri prejdení myšou. */
+a {
+  color: #00665e;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #a33e2b;
+}
+
+/* Obsah má obmedzenú šírku a je vycentrovaný na stránke. */
+.content {
+  width: min(100% - 2.5rem, 62rem);
+  margin-inline: auto;
+}
+
+/* Každá tematická časť je oddelená jemnou čiarou a dostatočným priestorom. */
+section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1rem;
+}
+
+/* Nadpisy sekcií ostávajú čitateľné aj na menších zariadeniach. */
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+}
+
+/* Odseky majú pohodlnú šírku riadka na čítanie. */
+section > p:not(.section-number) {
+  max-width: 68ch;
+}
+
+/* Príkazy v zozname a tabuľke sú vizuálne odlíšené od bežného textu. */
+code {
+  padding: 0.08rem 0.28rem;
+  background: #e9efeb;
+  color: #174e49;
+  font-family: "Courier New", monospace;
+}
+
+/* Zoznamy majú vzdušnejšie riadky a odsadenie. */
+.command-list,
+.steps-list {
+  padding-left: 1.4rem;
+}
+
+.command-list li,
+.steps-list li {
+  margin-block: 0.45rem;
+}
+
+/* Obrázok sa prispôsobí šírke obrazovky bez deformácie. */
+.photo {
+  margin: 2rem 0 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  max-width: 42rem;
+  max-height: 28rem;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+/* Popis obrázka je menší a tlmenejší než hlavný obsah. */
+.photo figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+}
+
+/* Obal umožní posúvať širokú tabuľku na malom displeji. */
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Tabuľka má viditeľné ohraničenie každej bunky. */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+}
+
+/* Hlavička tabuľky sa odlišuje jemným pozadím. */
+th {
+  background: var(--accent-bright);
+  color: var(--ink);
+}
+
+/* Poznámka o osobnej téme je vizuálne oddelená zvislou čiarou. */
+.personal-note {
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* Pätička uzatvára stránku a zarovná autora s odkazom. */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  width: min(100% - 2.5rem, 62rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Zmenšené okraje uvoľnia miesto na úzkom displeji. */
+@media (max-width: 36rem) {
+  .site-header {
+    padding-top: 2rem;
+  }
+
+  section {
+    padding-block: 2.25rem;
+  }
+
+  th,
+  td {
+    padding: 0.55rem;
+  }
+}

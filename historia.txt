@@ -1,0 +1,7 @@
+    1  mkdir -p ~/pieskovisko/projekt/css ~/pieskovisko/projekt/img
+    2  touch ~/pieskovisko/projekt/index.html ~/pieskovisko/poznamky.txt
+    3  cp ~/pieskovisko/poznamky.txt ~/pieskovisko/projekt/poznamky-kopia.txt
+    4  mv ~/pieskovisko/projekt/poznamky-kopia.txt ~/pieskovisko/projekt/poznamky-premenuj.txt
+    5  rm ~/pieskovisko/projekt/poznamky-premenuj.txt
+    6  vi ~/pieskovisko/o-mne.txt
+    7  cat ~/pieskovisko/o-mne.txt

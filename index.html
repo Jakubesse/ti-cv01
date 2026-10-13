@@ -1,0 +1,146 @@
+<!doctype html>
+<!-- Dokument HTML5, písaný v slovenčine a kódovaný v UTF-8. -->
+<html lang="sk">
+  <head>
+    <!-- Nastavenia znakov, zobrazenia na mobile, názvu karty a externého CSS. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Príkazový riadok a moja prvá stránka</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hlavička predstavuje názov stránky a navigáciu medzi jej sekciami. -->
+    <header class="site-header" id="hore">
+      <p class="eyebrow">Cvičenie CV01</p>
+      <h1>Príkazový riadok a moja prvá stránka</h1>
+      <!-- Odkazy v menu používajú kotvy na sekcie tejto stránky. -->
+      <nav aria-label="Hlavná navigácia">
+        <ul class="menu">
+          <li><a href="#terminal">Terminál</a></li>
+          <li><a href="#web">Prvá stránka</a></li>
+          <li><a href="#postup">Postup</a></li>
+          <li><a href="#zdroje">Zdroje</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hlavný obsah zoskupuje všetky tematické časti stránky. -->
+    <main class="content">
+      <!-- Sekcia predstavuje prácu v príkazovom riadku. -->
+      <section id="terminal" aria-labelledby="terminal-title">
+        <p class="section-number">01 / Základy</p>
+        <h2 id="terminal-title">Práca v termináli</h2>
+        <p>
+          Príkazový riadok umožňuje vytvárať priečinky a súbory, kopírovať ich
+          aj kontrolovať ich obsah. Pri práci je dôležité sledovať, v ktorom
+          priečinku sa práve nachádzame.
+        </p>
+        <p>
+          V tomto cvičení si precvičujem príkazy
+          <strong>mkdir, touch, cp a mv</strong>. Každý krok si overujem výpisom
+          súborov, aby som mala/mal prehľad o zmenách.
+        </p>
+        <!-- Nečíslovaný zoznam uvádza užitočné príkazy. -->
+        <ul class="command-list">
+          <li><code>pwd</code> zobrazí aktuálny priečinok.</li>
+          <li>
+            <code>ls -la</code> vypíše aj skryté súbory a ich podrobnosti.
+          </li>
+          <li><code>history</code> zobrazí príkazy použité v termináli.</li>
+        </ul>
+      </section>
+
+      <!-- Sekcia vysvetľuje základnú stavbu jednoduchej webovej stránky. -->
+      <section id="web" aria-labelledby="web-title">
+        <p class="section-number">02 / Tvorba</p>
+        <h2 id="web-title">Moja prvá webová stránka</h2>
+        <p>
+          HTML určuje význam a štruktúru obsahu. CSS sa stará o jeho vzhľad,
+          napríklad o farby, rozostupy a šírku stránky.
+        </p>
+        <p>
+          Stránka používa nadpisy, odseky, zoznamy, tabuľku aj obrázok. Dobrý
+          <em>alternatívny text</em> opíše obrázok ľuďom, ktorí ho nevidia alebo
+          ktorým sa nenačítal.
+        </p>
+        <!-- Obrázok sa načíta z rovnakého priečinka ako index.html. -->
+        <figure class="photo">
+          <img src="obrazok.jpg" alt="Doplň opis svojho obrázka" />
+          <!-- Popis vysvetľuje, čo obrázok zobrazuje. -->
+          <figcaption>
+            Obrázok k téme stránky. Nahraď ho vlastným súborom obrazok.jpg.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Sekcia ukazuje číslovaný postup tvorby stránky. -->
+      <section id="postup" aria-labelledby="postup-title">
+        <p class="section-number">03 / Postup</p>
+        <h2 id="postup-title">Od nápadu po hotovú stránku</h2>
+        <ol class="steps-list">
+          <li>Vytvorím HTML súbor a pripravím jeho základnú štruktúru.</li>
+          <li>Obsah rozdelím na pomenované sekcie a doplním odkazy.</li>
+          <li>
+            V samostatnom súbore CSS upravím vzhľad a skontrolujem stránku.
+          </li>
+        </ol>
+
+        <!-- Tabuľka porovnáva hlavné úlohy HTML a CSS; thead obsahuje jej hlavičku. -->
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Technológia</th>
+                <th scope="col">Na čo slúži</th>
+                <th scope="col">Príklad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>HTML</td>
+                <td>Štruktúra a význam obsahu</td>
+                <td><code>&lt;h1&gt;</code></td>
+              </tr>
+              <tr>
+                <td>CSS</td>
+                <td>Vzhľad a rozloženie stránky</td>
+                <td><code>color</code></td>
+              </tr>
+              <tr>
+                <td>Terminál</td>
+                <td>Práca so súbormi a priečinkami</td>
+                <td><code>mkdir</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Zdroje obsahujú externý odkaz otvorený v novej karte. -->
+      <section id="zdroje" aria-labelledby="zdroje-title">
+        <p class="section-number">04 / Ďalej</p>
+        <h2 id="zdroje-title">Zdroje na učenie</h2>
+        <p>
+          Ďalšie vysvetlenia a ukážky nájdeš v
+          <a
+            href="https://beata.stehlikova.website.tuke.sk/ti/02.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >materiáloch ku cvičeniu</a
+          >.
+        </p>
+        <p class="personal-note">
+          Téma semestrálneho projektu: <strong>DOPLŇ SVOJU TÉMU</strong>.
+        </p>
+      </section>
+    </main>
+
+    <!-- Pätička uvádza autora; nahraď zátvorkový text svojím menom. -->
+    <footer class="site-footer">
+      <p>
+        Autor/ka: <strong>Straka</strong> <span aria-hidden="true">·</span> 2026
+      </p>
+      <a href="#hore">Späť na začiatok</a>
+    </footer>
+  </body>
+</html>
